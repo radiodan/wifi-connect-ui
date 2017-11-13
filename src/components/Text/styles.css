@@ -1,0 +1,18 @@
+.heading {
+  text-align: center;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.body {
+  text-align: center;
+
+  font-size: 18px;
+  font-weight: 400;
+
+  color: #d1d3d4;
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="234px" height="133px" viewBox="0 0 234 133" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Group" sketch:type="MSLayerGroup" transform="translate(45.000000, 0.000000)">
+            <path d="M124,0 L116,0 L116,8 L124,8 L124,0 Z M122,6 L118,6 L118,2 L122,2 L122,6 Z" id="Fill-4" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M60,0 L52,0 L52,8 L60,8 L60,0 Z M58,6 L54,6 L54,2 L58,2 L58,6 Z" id="Fill-5" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M96,2 C93.791,2 92,3.791 92,6 L92,14 L100,14 L100,6 C100,3.791 98.209,2 96,2 M96,4 C97.103,4 98,4.897 98,6 L98,12 L94,12 L94,6 C94,4.897 94.897,4 96,4" id="Fill-6" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M9,96 C5.14,96 2,92.86 2,89 L2,19 C2,15.14 5.14,12 9,12 L135,12 C138.86,12 142,15.14 142,19 L142,89 C142,92.86 138.86,96 135,96 L9,96 Z" id="Fill-7" fill="#0288D1" sketch:type="MSShapeGroup"></path>
+            <path d="M135,10 L9,10 C4.05,10 0,14.05 0,19 L0,89 C0,93.95 4.05,98 9,98 L135,98 C139.95,98 144,93.95 144,89 L144,19 C144,14.05 139.95,10 135,10 M135,14 C137.757,14 140,16.243 140,19 L140,89 C140,91.757 137.757,94 135,94 L9,94 C6.243,94 4,91.757 4,89 L4,19 C4,16.243 6.243,14 9,14 L135,14" id="Fill-8" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M38.692,32 C27.834,32 19,40.834 19,51.692 C19,62.551 27.834,71.385 38.692,71.385 C49.55,71.385 58.384,62.551 58.384,51.692 C58.384,40.834 49.55,32 38.692,32 M38.692,35 C47.911,35 55.384,42.473 55.384,51.692 C55.384,60.911 47.911,68.385 38.692,68.385 C29.473,68.385 22,60.911 22,51.692 C22,42.473 29.473,35 38.692,35" id="Fill-9" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M38.736,37 C30.61,37 24,43.611 24,51.736 C24,59.862 30.61,66.473 38.736,66.473 C46.862,66.473 53.472,59.862 53.472,51.736 C53.472,43.611 46.862,37 38.736,37 M38.736,38 C46.322,38 52.472,44.15 52.472,51.736 C52.472,59.323 46.322,65.473 38.736,65.473 C31.15,65.473 25,59.323 25,51.736 C25,44.15 31.15,38 38.736,38" id="Fill-10" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M44.128,51.564 C44.128,54.637 41.637,57.128 38.564,57.128 C35.491,57.128 33,54.637 33,51.564 C33,48.491 35.491,46 38.564,46 C41.637,46 44.128,48.491 44.128,51.564 L44.128,51.564 Z" id="Stroke-11" stroke="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M11,19.5 C11,20.328 10.328,21 9.5,21 C8.672,21 8,20.328 8,19.5 C8,18.672 8.672,18 9.5,18 C10.328,18 11,18.672 11,19.5" id="Fill-12" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M11,88.5 C11,89.328 10.328,90 9.5,90 C8.672,90 8,89.328 8,88.5 C8,87.672 8.672,87 9.5,87 C10.328,87 11,87.672 11,88.5" id="Fill-13" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M136,88.5 C136,89.328 135.328,90 134.5,90 C133.672,90 133,89.328 133,88.5 C133,87.672 133.672,87 134.5,87 C135.328,87 136,87.672 136,88.5" id="Fill-14" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M136,19.5 C136,20.328 135.328,21 134.5,21 C133.672,21 133,20.328 133,19.5 C133,18.672 133.672,18 134.5,18 C135.328,18 136,18.672 136,19.5" id="Fill-15" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <g id="Group-18" transform="translate(56.000000, 8.000000)" sketch:type="MSShapeGroup">
+                <path d="M0,-0.0883 L0,1.9117" id="Fill-16" fill="#FFFFFF"></path>
+                <path d="M0,-0.0883 L0,1.9117" id="Stroke-17" stroke="#FFFFFF" stroke-width="2"></path>
+            </g>
+            <g id="Group-21" transform="translate(120.000000, 8.000000)" sketch:type="MSShapeGroup">
+                <path d="M0,-0.0883 L0,1.9117" id="Fill-19" fill="#FFFFFF"></path>
+                <path d="M0,-0.0883 L0,1.9117" id="Stroke-20" stroke="#FFFFFF" stroke-width="2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

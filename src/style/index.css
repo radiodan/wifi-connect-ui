@@ -5,11 +5,12 @@ body {
   padding: 0;
   margin: 0;
 
-  font-family: 'Helvetica Neue', arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-weight: 400;
 
   color: #444;
-  background: #fafafa;
+  background-color: #0288d1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
