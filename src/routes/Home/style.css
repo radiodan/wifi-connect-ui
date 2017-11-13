@@ -1,20 +1,19 @@
 .container {
+  height: 100vh;
+}
+
+.center {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-around;
-
-  padding: 56px 20px;
-  min-height: 100%;
-  width: 100%;
 }
 
-.image {
-  position: relative;
+.header {
+  justify-content: flex-end;
+  height: 60vh;
 }
 
-.imageLast {
-  position: absolute;
-  top: 0;
-  left: 0;
+.body {
+  height: 40vh;
 }

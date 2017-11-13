@@ -2,6 +2,7 @@ import { h, Component } from 'preact';
 
 import Button from '../../components/Button';
 import Text from '../../components/Text';
+import Header from '../../components/Header';
 
 import device from '../../assets/ui/device.svg';
 import highlight from '../../assets/ui/highlight.svg';
@@ -12,16 +13,16 @@ class Home extends Component {
   render() {
     return (
       <div class={style.container}>
-        <div>
-          <div class={style.image}>
-            <img class={style.imageFirst} src={highlight} />
-            <img class={style.imageLast} src={device} />
-          </div>
-          <Text heading>Radiodan Configuration</Text>
-          <Text>Setup Radiodan</Text>
+        <div class={`${style.center} ${style.header}`}>
+          <Header
+            images={[highlight, device]}
+            title="Radiodan Configuration"
+            body="Setup Radiodan"
+          />
         </div>
-
-        <Button onClick={this.props.onNext}>Start</Button>
+        <div class={`${style.center} ${style.body}`}>
+          <Button onClick={this.props.onNext}>Start</Button>
+        </div>
       </div>
     );
   }
