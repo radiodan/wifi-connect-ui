@@ -22,7 +22,7 @@ export default class Header extends Component {
         <Text heading class={style.title}>
           {title}
         </Text>
-        <p class={style.body}>{body}</p>
+        <Text class={style.body}>{body}</Text>
       </header>
     );
   }

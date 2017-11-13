@@ -1,2 +1,19 @@
 .container {
+  height: 100vh;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  justify-content: flex-end;
+  height: 60vh;
+}
+
+.body {
+  height: 40vh;
 }

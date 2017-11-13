@@ -1,6 +1,9 @@
 import { h, Component } from 'preact';
 
+import Header from '../../components/Header';
 import List from './components/List';
+
+import wave from '../../assets/ui/wave.svg';
 
 import style from './style';
 
@@ -14,9 +17,14 @@ export default class Networks extends Component {
   render() {
     return (
       <div class={style.container}>
-        <h1>Connect Radiodan</h1>
-        <p>Select a Wi-Fi network for Radioodan to join</p>
-        {this.renderList()}
+        <div class={`${style.center} ${style.header}`}>
+          <Header
+            images={[wave]}
+            title="Connect Radiodan"
+            body="Select a Wi-Fi network for Radioodan to join"
+          />
+        </div>
+        <div class={`${style.center} ${style.body}`}>{this.renderList()}</div>
       </div>
     );
   }
