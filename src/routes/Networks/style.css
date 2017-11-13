@@ -2,10 +2,9 @@
   height: 100vh;
 }
 
-.center {
+.flex {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -16,4 +15,7 @@
 
 .body {
   height: 40vh;
+  justify-content: flex-start;
+
+  background-color: #eeeeee;
 }

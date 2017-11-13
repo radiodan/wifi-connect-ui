@@ -10,21 +10,28 @@ import style from './style';
 export default class Networks extends Component {
   renderList = () => (
     <List
-      items={['AB_123', 'BevernFunk']}
+      header="Available Networks"
+      items={[
+        'AB_123',
+        'BevernFunk',
+        'Another',
+        'my really long network name',
+        'Network !!!'
+      ]}
       onSelected={value => this.props.onNext({ ssid: value })}
     />
   );
   render() {
     return (
       <div class={style.container}>
-        <div class={`${style.center} ${style.header}`}>
+        <div class={`${style.flex} ${style.header}`}>
           <Header
             images={[wave]}
             title="Connect Radiodan"
             body="Select a Wi-Fi network for Radioodan to join"
           />
         </div>
-        <div class={`${style.center} ${style.body}`}>{this.renderList()}</div>
+        <div class={`${style.flex} ${style.body}`}>{this.renderList()}</div>
       </div>
     );
   }

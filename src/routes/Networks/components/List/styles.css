@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+
+  min-height: 38px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  color: #000000;
+  background-color: #eeeeee;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+
+  min-height: 46px;
+
+  border-bottom: 1px solid gray;
+  background-color: #ffffff;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item:hover {
+  background: hsl(0, 0%, 97%);
+}
