@@ -27,8 +27,9 @@ export default class Networks extends Component {
         <div class={`${style.flex} ${style.header}`}>
           <Header
             images={[wave]}
+            step={1}
             title="Connect Radiodan"
-            body="Select a Wi-Fi network for Radioodan to join"
+            body="Select a Wi-Fi network for Radiodan to join"
           />
         </div>
         <div class={`${style.flex} ${style.body}`}>{this.renderList()}</div>

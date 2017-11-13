@@ -5,6 +5,10 @@ import Text from '../Text';
 import style from './style';
 
 export default class Header extends Component {
+  renderStep = () =>
+    this.props.step != null ? (
+      <div class={style.step}>{this.props.step}</div>
+    ) : null;
   render() {
     const { body, images, title } = this.props;
 
@@ -19,6 +23,7 @@ export default class Header extends Component {
             />
           ))}
         </div>
+        {this.renderStep()}
         <Text heading class={style.title}>
           {title}
         </Text>
