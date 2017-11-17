@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "preact build",
+    "build": "preact build --production --no-prerender",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
     "lint": "eslint src"
@@ -13,9 +13,7 @@
   "eslintConfig": {
     "extends": "eslint-config-airbnb"
   },
-  "eslintIgnore": [
-    "build/*"
-  ],
+  "eslintIgnore": ["build/*"],
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",
     "eslint": "^4.5.0",
