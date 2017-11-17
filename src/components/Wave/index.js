@@ -65,10 +65,9 @@ class Wave extends Component {
     this.currentAnimationId = setTimeout(this.updateAnimationFrame, 1000);
   };
   updateAnimationFrame = () => {
-    console.log('TICK');
     this.setState(
       { level: (this.state.level + 1) % 4 },
-      this.scheduleAnimationFrame,
+      this.scheduleAnimationFrame
     );
   };
 
