@@ -3,7 +3,8 @@
 }
 
 .header {
-  justify-content: flex-end;
+  display: flex;
+  align-items: center;
   height: 60vh;
 }
 
