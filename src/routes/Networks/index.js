@@ -1,6 +1,9 @@
 import { h, Component } from 'preact';
 
+import api from '../../lib/api';
+
 import Header from '../../components/Header';
+import Message from '../../components/Message';
 import Pane from '../../components/Pane';
 import List from './components/List';
 
@@ -9,23 +12,51 @@ import wave from '../../assets/ui/wave.svg';
 import style from './style';
 
 export default class Networks extends Component {
+  state = {
+    ssids: [],
+    error: null,
+  };
+  componentDidMount() {
+    this.fetchSsid();
+  }
+  fetchSsid = async () => {
+    try {
+      this.setState({
+        error: null,
+        ssids: await api.ssids(),
+      });
+    } catch (error) {
+      console.error(error);
+      this.setState({
+        ssids: [],
+        error,
+      });
+    }
+  };
+  handleRequestSsid = evt => {
+    evt.preventDefault();
+    this.fetchSsid();
+  };
+  nextWithSsid = ssid => this.props.onNext({ ssid });
+  renderError = () => (
+    <Message error>
+      <p>There was an error fetching Wi-Fi networks. 😓</p>
+      <p>
+        <a href="" onClick={this.handleRequestSsid}>
+          Try again
+        </a>
+      </p>
+    </Message>
+  );
   renderList = () => (
     <List
       header="Available Networks"
-      items={[
-        'Kabelsalat',
-        'EasyBox-727567',
-        'Bevernfunk_III',
-        'Singularity',
-        'Intruders',
-        'FRITZ!Box 7362',
-        'WLAN-P4TFMZ',
-        'FRITZ!Box 7412',
-        'EasyBox-727567'
-      ]}
-      onSelected={value => this.props.onNext({ ssid: value })}
+      items={this.state.ssids}
+      onSelected={this.nextWithSsid}
     />
   );
+  renderBody = () =>
+    this.state.error ? this.renderError() : this.renderList();
   render() {
     return (
       <div class={style.container}>
@@ -37,7 +68,9 @@ export default class Networks extends Component {
             body="Select a Wi-Fi network for Radiodan to join"
           />
         </div>
-        <Pane class={style.body}>{this.renderList()}</Pane>
+        <Pane class={style.body} stretch>
+          {this.renderBody()}
+        </Pane>
       </div>
     );
   }
