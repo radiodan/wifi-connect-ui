@@ -13,11 +13,15 @@ export default class Networks extends Component {
     <List
       header="Available Networks"
       items={[
-        'AB_123',
-        'BevernFunk',
-        'Another',
-        'my really long network name',
-        'Network !!!'
+        'Kabelsalat',
+        'EasyBox-727567',
+        'Bevernfunk_III',
+        'Singularity',
+        'Intruders',
+        'FRITZ!Box 7362',
+        'WLAN-P4TFMZ',
+        'FRITZ!Box 7412',
+        'EasyBox-727567'
       ]}
       onSelected={value => this.props.onNext({ ssid: value })}
     />
