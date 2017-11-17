@@ -5,13 +5,13 @@ import styles from './styles';
 
 const ListHeader = ({ children }) => (
   <Text heading class={styles.heading}>
-    <span>{children}</span>
+    <span class={styles.headingInner}>{children}</span>
   </Text>
 );
 
 const ListItem = ({ children, onClick }) => (
   <li class={styles.item} onClick={onClick}>
-    <span>{children}</span>
+    <span class={styles.itemInner}>{children}</span>
   </li>
 );
 

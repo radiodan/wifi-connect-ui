@@ -13,7 +13,7 @@ const Pane = ({
       transparent ? style.transparent : ''
     }`}
   >
-    {children}
+    <div class={style.inner}>{children}</div>
   </div>
 );
 

@@ -2,6 +2,12 @@
   background-color: #eeeeee;
 }
 
+.inner {
+  /* max-width: 500px; */
+  /* margin: 0 auto; */
+  width: 100%;
+}
+
 .flex {
   display: flex;
   flex-direction: column;

@@ -20,6 +20,14 @@
   background-color: #eeeeee;
 }
 
+.headingInner,
+.itemInner {
+  max-width: 360px;
+  width: 100vw;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 .item {
   display: flex;
   align-items: center;
