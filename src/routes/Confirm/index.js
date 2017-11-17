@@ -24,7 +24,7 @@ export default class Confirm extends Component {
               device is connected to the same WiFi network.`}
           />
         </div>
-        <Pane class={style.body} transparent>
+        <Pane class={style.body} transparent padding>
           <div class={style.actions}>
             <Button onClick={onBack}>Back</Button>
             <Button primary onClick={onNext}>
