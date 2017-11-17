@@ -20,7 +20,7 @@ export default class App extends Component {
 
   state = {
     ssid: null,
-    password: null,
+    passphrase: null,
   };
 
   route = path => Router.route(path);
@@ -36,10 +36,10 @@ export default class App extends Component {
       () => this.route('/networks/join')
     );
 
-  savePassword = ({ password }) =>
+  savePassword = ({ passphrase }) =>
     this.setState(
       {
-        password,
+        passphrase,
       },
       () => this.route('/networks/confirm')
     );

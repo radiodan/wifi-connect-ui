@@ -10,17 +10,17 @@ import style from './style';
 
 export default class Join extends Component {
   state = {
-    password: null,
+    passphrase: null,
   };
 
-  updatePassword = evt => this.setState({ password: evt.target.value });
+  updatePassword = evt => this.setState({ passphrase: evt.target.value });
   savePassword = () => {
-    this.props.onNext({ password: this.state.password });
+    this.props.onNext({ passphrase: this.state.password });
   };
 
   render() {
     const { step, ssid, onBack } = this.props;
-    const { password } = this.state;
+    const { passphrase } = this.state;
 
     return (
       <div class={style.container}>
@@ -36,7 +36,7 @@ export default class Join extends Component {
           <TextInput
             label="Password"
             onInput={this.updatePassword}
-            value={password}
+            value={passphrase}
           />
           <div class={style.actions}>
             <Button onClick={onBack}>Back</Button>

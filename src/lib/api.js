@@ -28,11 +28,14 @@ const realApi = {
     return await response.json();
   },
   connect: async ({ ssid, passphrase = '' }) => {
-    const response = await root.fetch(
-      `/connect?ssid=${encodeURIComponent(
-        ssid
-      )}&passphrase=${encodeURIComponent(passphrase)}`
-    );
+    const response = await root.fetch('/connect', {
+      method: 'POST',
+      body: new URLSearchParams(
+        `ssid=${encodeURIComponent(ssid)}&passphrase=${encodeURIComponent(
+          passphrase
+        )}`
+      ),
+    });
 
     if (!response.ok) {
       const error = new Error('Response was not OK');
