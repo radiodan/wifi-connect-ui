@@ -1,9 +1,12 @@
 import { h } from 'preact';
 
-import styles from './styles.css';
+import style from './styles.css';
 
-const Button = ({ children, onClick }) => (
-  <button class={styles.button} onClick={onClick}>
+const Button = ({ children, onClick, primary = false }) => (
+  <button
+    class={`${style.button} ${primary ? style.primary : style.secondary}`}
+    onClick={onClick}
+  >
     {children}
   </button>
 );

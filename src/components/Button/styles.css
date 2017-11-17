@@ -3,17 +3,27 @@
   min-height: 36px;
 
   text-transform: uppercase;
-  background-color: rgba(255, 255, 255, 1);
   border: none;
 
   font-size: 16px;
-  color: #0288d1;
 
   cursor: pointer;
-
-  flex: 0;
 }
 
-.button:hover {
+.primary {
+  color: #0288d1;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.primary:hover {
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.secondary {
+  color: #fff;
+  background-color: rgba(65, 64, 66, 1);
+}
+
+.secondary:hover {
+  background-color: rgba(65, 64, 66, 0.8);
 }

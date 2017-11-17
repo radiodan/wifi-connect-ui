@@ -1,5 +1,13 @@
 import { Component } from 'preact';
 
+import Button from '../../components/Button';
+import Header from '../../components/Header';
+import Pane from '../../components/Pane';
+import TextInput from '../../components/TextInput';
+import wave from '../../assets/ui/wave.svg';
+
+import style from './style';
+
 export default class Join extends Component {
   state = {
     password: null
@@ -15,16 +23,28 @@ export default class Join extends Component {
     const { password } = this.state;
 
     return (
-      <div>
-        <h1>{ssid} password</h1>
-        <p>Enter password or leave blank for no password</p>
-        <label>
-          <span>Password</span>
-          <input type="text" value={password} onInput={this.updatePassword} />
-        </label>
-
-        <button onClick={onBack}>Back</button>
-        <button onClick={this.savePassword}>Save</button>
+      <div class={style.container}>
+        <div class={`${style.flex} ${style.header}`}>
+          <Header
+            images={[wave]}
+            step={2}
+            title={`${ssid} password`}
+            body={`Enter password or leave blank for no password`}
+          />
+        </div>
+        <Pane class={style.body}>
+          <TextInput
+            label="Password"
+            onInput={this.updatePassword}
+            value={password}
+          />
+          <div class={style.actions}>
+            <Button onClick={onBack}>Back</Button>
+            <Button primary onClick={this.savePassword}>
+              Save
+            </Button>
+          </div>
+        </Pane>
       </div>
     );
   }

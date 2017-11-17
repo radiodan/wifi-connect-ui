@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: stretch;
+
+  padding-bottom: 15px;
+}
+
+.labelText {
+  padding-bottom: 10px;
+}
+
+.input {
+  height: 40px;
+
+  padding: 0 5px;
+
+  font-size: 14px;
+
+  border: 1px solid #d1d3d4;
+  border-radius: 3px;
+}

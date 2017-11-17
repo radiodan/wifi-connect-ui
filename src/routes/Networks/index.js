@@ -1,6 +1,7 @@
 import { h, Component } from 'preact';
 
 import Header from '../../components/Header';
+import Pane from '../../components/Pane';
 import List from './components/List';
 
 import wave from '../../assets/ui/wave.svg';
@@ -32,7 +33,7 @@ export default class Networks extends Component {
             body="Select a Wi-Fi network for Radiodan to join"
           />
         </div>
-        <div class={`${style.flex} ${style.body}`}>{this.renderList()}</div>
+        <Pane class={style.body}>{this.renderList()}</Pane>
       </div>
     );
   }

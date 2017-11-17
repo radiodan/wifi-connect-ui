@@ -1,0 +1,13 @@
+.container {
+  background-color: #eeeeee;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.transparent {
+  background-color: transparent;
+}

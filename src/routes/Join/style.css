@@ -17,3 +17,19 @@
   height: 40vh;
   justify-content: flex-start;
 }
+
+.actions {
+  display: flex;
+  justify-content: stretch;
+
+  width: 100%;
+}
+
+.actions > * {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.actions > *:last-child {
+  margin-right: 0;
+}

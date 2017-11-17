@@ -5,7 +5,7 @@ import Home from './routes/Home';
 import Networks from './routes/Networks';
 import Join from './routes/Join';
 import Confirm from './routes/Confirm';
-import Connect from './routes/Connect';
+import Connecting from './routes/Connecting';
 // import Home from 'async!../routes/home';
 // import Profile from 'async!../routes/profile';
 
@@ -68,7 +68,7 @@ export default class App extends Component {
             onBack={this.selectNetwork}
             onNext={this.confirm}
           />
-          <Connect {...this.state} path="/networks/connect" />
+          <Connecting {...this.state} path="/networks/connect" />
         </Router>
       </div>
     );
