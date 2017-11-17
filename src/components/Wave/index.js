@@ -74,8 +74,6 @@ class Wave extends Component {
   render() {
     const { level } = this.state;
 
-    console.log('elvel', level);
-
     return (
       <div class={style.container}>
         <svg

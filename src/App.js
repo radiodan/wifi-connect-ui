@@ -33,7 +33,7 @@ export default class App extends Component {
       {
         ssid,
       },
-      () => this.route('/networks/join'),
+      () => this.route('/networks/join')
     );
 
   savePassword = ({ password }) =>
@@ -41,7 +41,7 @@ export default class App extends Component {
       {
         password,
       },
-      () => this.route('/networks/confirm'),
+      () => this.route('/networks/confirm')
     );
 
   confirm = () => this.route('/networks/connect');
