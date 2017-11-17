@@ -4,7 +4,7 @@ import Button from '../../components/Button';
 import Header from '../../components/Header';
 import Pane from '../../components/Pane';
 import TextInput from '../../components/TextInput';
-import wave from '../../assets/ui/wave.svg';
+import Wave from '../../components/Wave';
 
 import style from './style';
 
@@ -26,7 +26,7 @@ export default class Join extends Component {
       <div class={style.container}>
         <div class={`${style.flex} ${style.header}`}>
           <Header
-            images={[wave]}
+            images={<Wave level={2} />}
             step={step}
             title={`${ssid} password`}
             body={`Enter password or leave blank for no password`}

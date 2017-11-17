@@ -3,7 +3,7 @@ import { h, Component } from 'preact';
 import Button from '../../components/Button';
 import Header from '../../components/Header';
 import Pane from '../../components/Pane';
-import wave from '../../assets/ui/wave.svg';
+import Wave from '../../components/Wave';
 
 import style from './style.css';
 
@@ -15,7 +15,7 @@ export default class Confirm extends Component {
       <div class={style.container}>
         <div class={`${style.flex} ${style.header}`}>
           <Header
-            images={[wave]}
+            images={<Wave level={3} />}
             step={step}
             title="Important notes"
             body={`Your Radiodan will connect to ${

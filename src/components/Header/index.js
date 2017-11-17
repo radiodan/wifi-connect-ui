@@ -12,13 +12,15 @@ export default class Header extends Component {
   renderIndicator = () => this.props.indicator;
   renderImages = () => (
     <div class={style.image}>
-      {this.props.images.map((image, index) => (
-        <img
-          key={index}
-          class={index === 0 ? style.imageFirst : style.imageStacked}
-          src={image}
-        />
-      ))}
+      {Array.isArray(this.props.images)
+        ? this.props.images.map((image, index) => (
+            <img
+              key={index}
+              class={index === 0 ? style.imageFirst : style.imageStacked}
+              src={image}
+            />
+          ))
+        : this.props.images}
     </div>
   );
   render() {

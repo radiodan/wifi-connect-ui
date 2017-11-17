@@ -4,7 +4,7 @@ import Button from '../../components/Button';
 import Header from '../../components/Header';
 import Loading from '../../components/Loading';
 import Pane from '../../components/Pane';
-import wave from '../../assets/ui/wave.svg';
+import Wave from '../../components/Wave';
 
 import style from './style.css';
 
@@ -14,8 +14,7 @@ export default class Connect extends Component {
       <div class={style.container}>
         <div class={style.header}>
           <Header
-            images={[wave]}
-            indicator={<Loading />}
+            images={<Wave animating />}
             title="Connecting"
             body="Radiodan is now connecting. This page will automatically close when the process is done."
           />

@@ -5,9 +5,9 @@ import api from '../../lib/api';
 import Header from '../../components/Header';
 import Message from '../../components/Message';
 import Pane from '../../components/Pane';
-import List from './components/List';
+import Wave from '../../components/Wave';
 
-import wave from '../../assets/ui/wave.svg';
+import List from './components/List';
 
 import style from './style';
 
@@ -62,7 +62,7 @@ export default class Networks extends Component {
       <div class={style.container}>
         <div class={`${style.flex} ${style.header}`}>
           <Header
-            images={[wave]}
+            images={<Wave level={1} />}
             step={this.props.step}
             title="Connect Radiodan"
             body="Select a Wi-Fi network for Radiodan to join"
