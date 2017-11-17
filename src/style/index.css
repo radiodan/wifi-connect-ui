@@ -10,6 +10,8 @@ body {
   font-weight: 400;
 
   color: #444;
+  background-color: hsl(201, 98%, 41%);
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -19,6 +21,4 @@ body {
 }
 
 #app {
-  height: 100%;
-  background-color: hsl(201, 98%, 41%);
 }
