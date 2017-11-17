@@ -1,4 +1,7 @@
 .container {
+  display: flex;
+  flex-direction: column;
+
   height: 100vh;
 }
 
@@ -11,9 +14,10 @@
 
 .header {
   justify-content: flex-end;
-  height: 60vh;
+  height: 50vh;
+  min-height: 300px;
 }
 
 .body {
-  height: 40vh;
+  height: 50vh;
 }

@@ -1,5 +1,5 @@
 {
   "prettier.eslintIntegration": true,
   "editor.formatOnSave": true,
-  "prettier.trailingComma": "all"
+  "prettier.trailingComma": "es5"
 }
