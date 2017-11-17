@@ -6,14 +6,18 @@ const Pane = ({
   children,
   class: className = '',
   flex = true,
-  transparent = false
+  padding = false,
+  stretch = false,
+  transparent = false,
 }) => (
   <div
     class={`${className} ${style.container} ${flex ? style.flex : ''} ${
-      transparent ? style.transparent : ''
-    }`}
+      padding ? style.padding : ''
+    } ${transparent ? style.transparent : ''}`}
   >
-    <div class={style.inner}>{children}</div>
+    <div class={`${style.inner} ${stretch ? style.innerStretch : ''}`}>
+      {children}
+    </div>
   </div>
 );
 

@@ -10,7 +10,7 @@ import style from './style';
 
 export default class Join extends Component {
   state = {
-    password: null
+    password: null,
   };
 
   updatePassword = evt => this.setState({ password: evt.target.value });
@@ -32,7 +32,7 @@ export default class Join extends Component {
             body={`Enter password or leave blank for no password`}
           />
         </div>
-        <Pane class={style.body}>
+        <Pane class={style.body} padding>
           <TextInput
             label="Password"
             onInput={this.updatePassword}
