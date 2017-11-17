@@ -19,7 +19,7 @@ export default class Join extends Component {
   };
 
   render() {
-    const { ssid, onBack } = this.props;
+    const { step, ssid, onBack } = this.props;
     const { password } = this.state;
 
     return (
@@ -27,7 +27,7 @@ export default class Join extends Component {
         <div class={`${style.flex} ${style.header}`}>
           <Header
             images={[wave]}
-            step={2}
+            step={step}
             title={`${ssid} password`}
             body={`Enter password or leave blank for no password`}
           />

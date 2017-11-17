@@ -9,14 +9,14 @@ import style from './style.css';
 
 export default class Confirm extends Component {
   render() {
-    const { ssid, onBack, onNext } = this.props;
+    const { step, ssid, onBack, onNext } = this.props;
 
     return (
       <div class={style.container}>
         <div class={`${style.flex} ${style.header}`}>
           <Header
             images={[wave]}
-            step={2}
+            step={step}
             title="Important notes"
             body={`Your Radiodan will connect to ${
               ssid

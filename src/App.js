@@ -20,7 +20,7 @@ export default class App extends Component {
 
   state = {
     ssid: null,
-    password: null
+    password: null,
   };
 
   route = path => Router.route(path);
@@ -31,17 +31,17 @@ export default class App extends Component {
   selectNetwork = ({ ssid }) =>
     this.setState(
       {
-        ssid
+        ssid,
       },
-      () => this.route('/networks/join')
+      () => this.route('/networks/join'),
     );
 
   savePassword = ({ password }) =>
     this.setState(
       {
-        password
+        password,
       },
-      () => this.route('/networks/confirm')
+      () => this.route('/networks/confirm'),
     );
 
   confirm = () => this.route('/networks/connect');
@@ -55,18 +55,21 @@ export default class App extends Component {
             {...this.state}
             path="/networks"
             onNext={this.selectNetwork}
+            step={1}
           />
           <Join
             {...this.state}
             path="/networks/join"
             onBack={this.showNetworkList}
             onNext={this.savePassword}
+            step={2}
           />
           <Confirm
             {...this.state}
             path="/networks/confirm"
             onBack={this.selectNetwork}
             onNext={this.confirm}
+            step={3}
           />
           <Connecting {...this.state} path="/networks/connect" />
         </Router>

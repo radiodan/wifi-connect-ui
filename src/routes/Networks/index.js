@@ -63,7 +63,7 @@ export default class Networks extends Component {
         <div class={`${style.flex} ${style.header}`}>
           <Header
             images={[wave]}
-            step={1}
+            step={this.props.step}
             title="Connect Radiodan"
             body="Select a Wi-Fi network for Radiodan to join"
           />
