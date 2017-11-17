@@ -28,3 +28,7 @@
 .actions > *:last-child {
   margin-right: 0;
 }
+
+.error {
+  padding: 15px;
+}

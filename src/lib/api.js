@@ -14,16 +14,36 @@ const FAKE_SSIDS = [
 
 const fakeApi = {
   ssids: async () => FAKE_SSIDS,
+  connect: async () => {},
 };
 
 const realApi = {
   ssids: async () => {
     const response = await root.fetch('/ssid');
+
+    if (!response.ok) {
+      throw new Error('Response was not OK', response);
+    }
+
     return await response.json();
+  },
+  connect: async ({ ssid, passphrase = '' }) => {
+    const response = await root.fetch(
+      `/connect?ssid=${encodeURIComponent(
+        ssid
+      )}&passphrase=${encodeURIComponent(passphrase)}`
+    );
+
+    if (!response.ok) {
+      const error = new Error('Response was not OK');
+      error.response = response;
+      throw error;
+    }
+
+    return response;
   },
 };
 
-// const api = process.env.NODE_ENV === 'development' ? fakeApi : realApi;
-const api = fakeApi;
+const api = process.env.NODE_ENV === 'development' ? fakeApi : realApi;
 
 export default api;
