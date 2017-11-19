@@ -9,9 +9,12 @@ import Wave from '../../components/Wave';
 import style from './style';
 
 export default class Join extends Component {
-  state = {
-    passphrase: null,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      passphrase: props.passphrase,
+    };
+  }
 
   updatePassphrase = evt => this.setState({ passphrase: evt.target.value });
   savePassphrase = () => {

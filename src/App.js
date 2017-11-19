@@ -10,13 +10,6 @@ import Connecting from './routes/Connecting';
 // import Profile from 'async!../routes/profile';
 
 export default class App extends Component {
-  /** Gets fired when the route changes.
-   *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
-   *	@param {string} event.url	The newly routed URL
-   */
-  handleRoute = e => {
-    this.currentUrl = e.url;
-  };
 
   state = {
     ssid: null,
@@ -25,24 +18,50 @@ export default class App extends Component {
 
   route = path => Router.route(path);
 
-  showNetworkList = () =>
-    this.setState({ ssid: null }, () => this.route('/networks'));
+  /** Gets fired when the route changes.
+   *	@param {Object} event       "change" event from [preact-router](http://git.io/preact-router)
+   *	@param {string} event.url   The newly routed URL
+   */
+  handleRoute = e => {
+    let nextState;
 
-  selectNetwork = ({ ssid }) =>
-    this.setState(
-      {
-        ssid,
-      },
-      () => this.route('/networks/join')
-    );
+    switch (e.url) {
+      case '/networks':
+        nextState = { ssid: null, passphrase: null };
+        break;
+      default:
+        nextState = {};
+    }
 
-  savePassphrase = ({ passphrase }) =>
-    this.setState(
-      {
-        passphrase,
-      },
-      () => this.route('/networks/confirm')
-    );
+    this.setState(nextState);
+  };
+
+  back = () => {
+    root.history.back();
+  };
+
+  showIndex = () => {
+    this.route('/');
+  };
+
+  showNetworkList = () => {
+    this.route('/networks');
+  };
+
+  selectNetwork = ({ ssid }) => {
+    this.setState({
+      ssid,
+    });
+
+    this.route('/networks/join');
+  };
+
+  savePassphrase = ({ passphrase }) => {
+    this.setState({
+      passphrase,
+    });
+    this.route('/networks/confirm');
+  };
 
   confirm = () => this.route('/networks/connect');
 
@@ -60,14 +79,14 @@ export default class App extends Component {
           <Join
             {...this.state}
             path="/networks/join"
-            onBack={this.showNetworkList}
+            onBack={this.back}
             onNext={this.savePassphrase}
             step={2}
           />
           <Confirm
             {...this.state}
             path="/networks/confirm"
-            onBack={this.selectNetwork}
+            onBack={this.back}
             onNext={this.confirm}
             step={3}
           />
