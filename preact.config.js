@@ -7,7 +7,7 @@ export default (config, env, helpers) => {
 
   if (env.isProd) {
     config.output.path = path.resolve(__dirname, 'build', 'js');
-    config.output.publicPath = '/js';
+    config.output.publicPath = '/js/';
   }
 
   // No chunks
