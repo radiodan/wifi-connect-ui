@@ -1,0 +1,18 @@
+{
+  "env": {
+    "test": {
+      "presets": ["env"],
+      "plugins": [
+        "transform-regenerator",
+        [
+          "transform-runtime",
+          {
+            "helpers": false,
+            "polyfill": false,
+            "regenerator": true
+          }
+        ]
+      ]
+    }
+  }
+}

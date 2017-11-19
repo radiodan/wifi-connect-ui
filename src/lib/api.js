@@ -27,14 +27,16 @@ const realApi = {
 
     return await response.json();
   },
-  connect: async ({ ssid, passphrase = '' }) => {
+  connect: async ({ ssid, passphrase = '' } = { ssid: null }) => {
+    if (ssid == null) {
+      throw new Error('Object containing ssid not provided');
+    }
+
     const response = await root.fetch('/connect', {
       method: 'POST',
-      body: new URLSearchParams(
-        `ssid=${encodeURIComponent(ssid)}&passphrase=${encodeURIComponent(
-          passphrase
-        )}`
-      ),
+      body: `ssid=${encodeURIComponent(ssid)}&passphrase=${encodeURIComponent(
+        passphrase
+      )}`,
     });
 
     if (!response.ok) {
