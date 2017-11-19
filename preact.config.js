@@ -5,8 +5,10 @@ export default (config, env, helpers) => {
   let { rule } = helpers.getLoadersByName(config, 'babel-loader')[0];
   let babelConfig = rule.options;
 
-  config.output.path = path.resolve(__dirname, 'build', 'js');
-  config.output.publicPath = '/js';
+  if (env.isProd) {
+    config.output.path = path.resolve(__dirname, 'build', 'js');
+    config.output.publicPath = '/js';
+  }
 
   // No chunks
   config.plugins = config.plugins.filter(
