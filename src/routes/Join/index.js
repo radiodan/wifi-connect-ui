@@ -13,9 +13,9 @@ export default class Join extends Component {
     passphrase: null,
   };
 
-  updatePassword = evt => this.setState({ passphrase: evt.target.value });
-  savePassword = () => {
-    this.props.onNext({ passphrase: this.state.password });
+  updatePassphrase = evt => this.setState({ passphrase: evt.target.value });
+  savePassphrase = () => {
+    this.props.onNext({ passphrase: this.state.passphrase });
   };
 
   render() {
@@ -35,12 +35,12 @@ export default class Join extends Component {
         <Pane class={style.body} padding>
           <TextInput
             label="Password"
-            onInput={this.updatePassword}
+            onInput={this.updatePassphrase}
             value={passphrase}
           />
           <div class={style.actions}>
             <Button onClick={onBack}>Back</Button>
-            <Button primary onClick={this.savePassword}>
+            <Button primary onClick={this.savePassphrase}>
               Save
             </Button>
           </div>

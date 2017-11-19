@@ -36,7 +36,7 @@ export default class App extends Component {
       () => this.route('/networks/join')
     );
 
-  savePassword = ({ passphrase }) =>
+  savePassphrase = ({ passphrase }) =>
     this.setState(
       {
         passphrase,
@@ -61,7 +61,7 @@ export default class App extends Component {
             {...this.state}
             path="/networks/join"
             onBack={this.showNetworkList}
-            onNext={this.savePassword}
+            onNext={this.savePassphrase}
             step={2}
           />
           <Confirm
