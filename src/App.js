@@ -1,15 +1,26 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
+import root from 'window-or-global';
 
 import Home from './routes/Home';
 import Networks from './routes/Networks';
 import Join from './routes/Join';
 import Confirm from './routes/Confirm';
 import Connecting from './routes/Connecting';
-// import Home from 'async!../routes/home';
-// import Profile from 'async!../routes/profile';
-
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    const shouldRedirectToRoot = !/^\/(networks)?$/.test(
+      Router.getCurrentUrl()
+    );
+
+    if (shouldRedirectToRoot) {
+      this.showIndex();
+    }
+  }
 
   state = {
     ssid: null,
