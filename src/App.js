@@ -2,16 +2,16 @@ import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 import root from 'window-or-global';
 
+import applyTheme from './lib/applyTheme';
+
+import Loading from './routes/Loading';
 import Home from './routes/Home';
 import Networks from './routes/Networks';
 import Join from './routes/Join';
 import Confirm from './routes/Confirm';
 import Connecting from './routes/Connecting';
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-  }
 
+export default class App extends Component {
   componentDidMount() {
     const shouldRedirectToRoot = !/^\/(networks)?$/.test(
       Router.getCurrentUrl()
@@ -19,10 +19,13 @@ export default class App extends Component {
 
     if (shouldRedirectToRoot) {
       this.showIndex();
+    } else {
+      applyTheme().then(this.showWelcome);
     }
   }
 
   state = {
+    themed: false,
     ssid: null,
     passphrase: null,
   };
@@ -55,6 +58,11 @@ export default class App extends Component {
     this.route('/');
   };
 
+  showWelcome = () => {
+    console.log('show welcome');
+    this.route('/welcome');
+  };
+
   showNetworkList = () => {
     this.route('/networks');
   };
@@ -80,7 +88,8 @@ export default class App extends Component {
     return (
       <div id="app">
         <Router onChange={this.handleRoute}>
-          <Home {...this.state} path="/" onNext={this.showNetworkList} />
+          <Loading {...this.state} path="/" />
+          <Home {...this.state} path="/welcome" onNext={this.showNetworkList} />
           <Networks
             {...this.state}
             path="/networks"
