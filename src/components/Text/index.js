@@ -37,9 +37,9 @@ export default ({
   html = null,
 }) =>
   typeof html === 'string' ? (
-    <TextWithHtmlContent class={className} header={heading} html={html} />
+    <TextWithHtmlContent class={className} heading={heading} html={html} />
   ) : (
-    <TextWithChildren class={className} header={heading}>
+    <TextWithChildren class={className} heading={heading}>
       {children}
     </TextWithChildren>
   );

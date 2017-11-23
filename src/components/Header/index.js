@@ -39,9 +39,7 @@ export default class Header extends Component {
         {this.renderImages()}
         {this.renderStep()}
         {this.renderIndicator()}
-        <div class={style.title}>
-          <Text heading>{title}</Text>
-        </div>
+        <div class={style.title}>{this.renderTitle(title)}</div>
         <div class={style.body}>{this.renderBody(body)}</div>
       </header>
     );

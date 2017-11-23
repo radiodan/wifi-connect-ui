@@ -19,6 +19,7 @@ export default class Join extends Component {
 
   renderTitleWithSsid = ssid => (
     <Text
+      heading
       html={this.props
         .translate('join.title', { ssid })
         .replace(ssid, `<strong>${ssid}</strong>`)}
