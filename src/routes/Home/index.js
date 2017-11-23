@@ -10,19 +10,19 @@ import highlight from '../../assets/ui/highlight.svg';
 import style from './style';
 
 class Home extends Component {
-  render() {
+  render({ translate }) {
     return (
       <div class={style.container}>
         <div class={`${style.center} ${style.header}`}>
           <Header
             images={[highlight, device]}
-            title="Radiodan Configuration"
-            body="Setup Radiodan"
+            title={translate('home.title')}
+            body={translate('home.body')}
           />
         </div>
         <div class={`${style.center} ${style.body}`}>
           <Button wide onClick={this.props.onNext} primary contrast>
-            Start
+            {translate('home.action')}
           </Button>
         </div>
       </div>

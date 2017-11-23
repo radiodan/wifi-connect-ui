@@ -40,32 +40,32 @@ export default class Networks extends Component {
   nextWithSsid = ssid => this.props.onNext({ ssid });
   renderError = () => (
     <Message error>
-      <p>There was an error fetching Wi-Fi networks. 😓</p>
+      <p>{this.props.translate('networks.errorTitle')}</p>
       <p>
         <a href="" onClick={this.handleRequestSsid}>
-          Try again
+          {this.props.translate('networks.errorTryAgain')}
         </a>
       </p>
     </Message>
   );
   renderList = () => (
     <List
-      header="Available Networks"
+      header={this.props.translate('networks.availableNetworks')}
       items={this.state.ssids}
       onSelected={this.nextWithSsid}
     />
   );
   renderBody = () =>
     this.state.error ? this.renderError() : this.renderList();
-  render() {
+  render({ translate }) {
     return (
       <div class={style.container}>
         <div class={`${style.flex} ${style.header}`}>
           <Header
             images={<Wave level={1} />}
             step={this.props.step}
-            title="Connect Radiodan"
-            body="Select a Wi-Fi network for Radiodan to join"
+            title={translate('networks.title')}
+            body={translate('networks.body')}
           />
         </div>
         <Pane class={style.body} stretch>

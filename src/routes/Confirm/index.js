@@ -10,9 +10,9 @@ import Wave from '../../components/Wave';
 
 import style from './style.css';
 
-const ErrorMessage = () => (
+const ErrorMessage = ({ message }) => (
   <div class={style.error}>
-    <Text>There was an error, please go back and try again.</Text>
+    <Text>{message}</Text>
   </div>
 );
 
@@ -40,30 +40,31 @@ export default class Confirm extends Component {
   renderActions = () => (
     <div class={style.actions}>
       <Button onClick={this.props.onBack} contrast>
-        Back
+        {this.props.translate('confirm.back')}
       </Button>
       <Button primary onClick={this.connect} contrast>
-        Connect
+        {this.props.translate('confirm.next')}
       </Button>
     </div>
   );
 
-  renderError = () => (this.state.error ? <ErrorMessage /> : null);
+  renderError = () =>
+    this.state.error ? (
+      <ErrorMessage message={this.props.translate('confirm.error')} />
+    ) : null;
 
-  render() {
+  render({ translate }) {
     const { step, ssid, onBack } = this.props;
 
     return (
       <div class={style.container}>
         <div class={`${style.flex} ${style.header}`}>
+          {this.renderBodyWithSsid(ssid)}
           <Header
             images={<Wave level={3} />}
             step={step}
-            title="Important notes"
-            body={`Your Radiodan will connect to ${
-              ssid
-            } after restarting. Make sure your
-              device is connected to the same WiFi network.`}
+            title={translate('confirm.title')}
+            body={translate('confirm.body', { ssid })}
           />
         </div>
         <Pane class={style.body} transparent padding>

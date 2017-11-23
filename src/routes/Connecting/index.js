@@ -9,14 +9,14 @@ import Wave from '../../components/Wave';
 import style from './style.css';
 
 export default class Connect extends Component {
-  render() {
+  render({ translate }) {
     return (
       <div class={style.container}>
         <div class={style.header}>
           <Header
             images={<Wave animating />}
-            title="Connecting"
-            body="Radiodan is now connecting. This page will automatically close when the process is done."
+            title={translate('connect.title')}
+            body={translate('connect.body')}
           />
         </div>
       </div>

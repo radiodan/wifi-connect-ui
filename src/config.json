@@ -7,5 +7,29 @@
     "tertiary": "hsl(0, 0%, 27%)",
     "tertiaryAlternate": "hsl(0, 0%, 37%)",
     "accent": "yellow"
+  },
+  "text": {
+    "home.title": "Radiodan Configuration",
+    "home.body": "Setup Radiodan",
+    "home.action": "Start",
+    "confirm.title": "Important notes",
+    "confirm.body":
+      "Your Radiodan will connect to ${ssid} after restarting. Make sure your device is connected to the same WiFi network.",
+    "confirm.back": "Back",
+    "confirm.next": "Connect",
+    "confirm.error": "There was an error, please go back and try again.",
+    "connect.title": "Connecting",
+    "connect.body":
+      "Radiodan is now connecting. This page will automatically close when the process is done.",
+    "join.title": "${ssid} password",
+    "join.body": "Enter password or leave blank for no password",
+    "join.passwordLabel": "Password",
+    "join.back": "Back",
+    "join.next": "Save",
+    "networks.title": "Connect Radiodan",
+    "networks.body": "Select a Wi-Fi network for Radiodan to join",
+    "networks.availableNetworks": "Available Networks",
+    "networks.errorTitle": "There was an error fetching Wi-Fi networks. 😓",
+    "networks.errorTryAgain": "Try again"
   }
 }

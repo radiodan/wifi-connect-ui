@@ -31,10 +31,12 @@ export default class Header extends Component {
         {this.renderImages()}
         {this.renderStep()}
         {this.renderIndicator()}
-        <Text heading class={style.title}>
-          {title}
-        </Text>
-        <Text class={style.body}>{body}</Text>
+        <div class={style.title}>
+          <Text heading>{title}</Text>
+        </div>
+        <div class={style.body}>
+          <Text>{body}</Text>
+        </div>
       </header>
     );
   }

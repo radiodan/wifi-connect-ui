@@ -2,6 +2,9 @@ import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 import root from 'window-or-global';
 
+
+import translate from './lib/translate';
+import fetchConfig from './lib/fetchConfig';
 import applyTheme from './lib/applyTheme';
 import cssVariablesPolyfill from './lib/cssVariablesPolyfill';
 
@@ -22,18 +25,36 @@ export default class App extends Component {
       this.showIndex();
     }
 
-    applyTheme().then(() => {
-      cssVariablesPolyfill();
-      this.showWelcome();
-    });
+    this.fetchConfig();
   }
 
+  fetchConfig = async () => {
+    this.setState(
+      {
+        config: await fetchConfig(),
+      },
+      this.applyThemeCss
+    );
+  };
+
+  applyThemeCss = () => {
+    applyTheme(this.state.config);
+    cssVariablesPolyfill();
+
+    this.translate = translate(this.state.config);
+
+    this.showWelcome();
+  };
+
+  config = null;
+
   state = {
-    themed: false,
+    config: null,
     ssid: null,
     passphrase: null,
   };
 
+  translate = () => null;
   route = path => Router.route(path);
 
   /** Gets fired when the route changes.
@@ -87,33 +108,42 @@ export default class App extends Component {
 
   confirm = () => this.route('/networks/connect');
 
+  routeProps = () => ({
+    ...this.state,
+    translate: this.translate,
+  });
+
   render() {
     return (
       <div id="app">
         <Router onChange={this.handleRoute}>
-          <Loading {...this.state} path="/" />
-          <Home {...this.state} path="/welcome" onNext={this.showNetworkList} />
+          <Loading path="/" />
+          <Home
+            {...this.routeProps()}
+            path="/welcome"
+            onNext={this.showNetworkList}
+          />
           <Networks
-            {...this.state}
+            {...this.routeProps()}
             path="/networks"
             onNext={this.selectNetwork}
             step={1}
           />
           <Join
-            {...this.state}
+            {...this.routeProps()}
             path="/networks/join"
             onBack={this.back}
             onNext={this.savePassphrase}
             step={2}
           />
           <Confirm
-            {...this.state}
+            {...this.routeProps()}
             path="/networks/confirm"
             onBack={this.back}
             onNext={this.confirm}
             step={3}
           />
-          <Connecting {...this.state} path="/networks/connect" />
+          <Connecting {...this.routeProps()} path="/networks/connect" />
         </Router>
       </div>
     );
