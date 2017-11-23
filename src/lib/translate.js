@@ -1,8 +1,9 @@
-import template from 'lodash/template';
+import escape from 'lodash/escape';
 import mapValues from 'lodash/mapValues';
+import template from 'lodash/template';
 
 const makeTemplateFunction = tmpl =>
-  template(tmpl, { interpolate: /\$\{([\s\S]+?)\}/g });
+  template(escape(tmpl), { interpolate: /\$\{([\s\S]+?)\}/g });
 
 export default config => {
   const templateFunctions = mapValues(config.text, makeTemplateFunction);
