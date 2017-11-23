@@ -17,6 +17,14 @@ export default class Join extends Component {
     };
   }
 
+  renderTitleWithSsid = ssid => (
+    <Text
+      html={this.props
+        .translate('join.title', { ssid })
+        .replace(ssid, `<strong>${ssid}</strong>`)}
+    />
+  );
+
   updatePassphrase = evt => this.setState({ passphrase: evt.target.value });
   savePassphrase = () => {
     this.props.onNext({ passphrase: this.state.passphrase });
@@ -32,7 +40,7 @@ export default class Join extends Component {
           <Header
             images={<Wave level={2} />}
             step={step}
-            title={translate('join.title', { ssid })}
+            title={this.renderTitleWithSsid(ssid)}
             body={translate('join.body')}
           />
         </div>

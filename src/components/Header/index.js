@@ -9,7 +9,9 @@ export default class Header extends Component {
     this.props.step != null ? (
       <div class={style.step}>{this.props.step}</div>
     ) : null;
+
   renderIndicator = () => this.props.indicator;
+
   renderImages = () => (
     <div class={style.image}>
       {Array.isArray(this.props.images)
@@ -23,6 +25,12 @@ export default class Header extends Component {
         : this.props.images}
     </div>
   );
+
+  renderTitle = title =>
+    typeof title === 'string' ? <Text heading>{title}</Text> : title;
+
+  renderBody = body => (typeof body === 'string' ? <Text>{body}</Text> : body);
+
   render() {
     const { body, images, title } = this.props;
 
@@ -34,9 +42,7 @@ export default class Header extends Component {
         <div class={style.title}>
           <Text heading>{title}</Text>
         </div>
-        <div class={style.body}>
-          <Text>{body}</Text>
-        </div>
+        <div class={style.body}>{this.renderBody(body)}</div>
       </header>
     );
   }

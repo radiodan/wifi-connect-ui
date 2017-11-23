@@ -53,18 +53,25 @@ export default class Confirm extends Component {
       <ErrorMessage message={this.props.translate('confirm.error')} />
     ) : null;
 
+  renderBodyWithSsid = ssid => (
+    <Text
+      html={this.props
+        .translate('confirm.body', { ssid })
+        .replace(ssid, `<strong>${ssid}</strong>`)}
+    />
+  );
+
   render({ translate }) {
     const { step, ssid, onBack } = this.props;
 
     return (
       <div class={style.container}>
         <div class={`${style.flex} ${style.header}`}>
-          {this.renderBodyWithSsid(ssid)}
           <Header
             images={<Wave level={3} />}
             step={step}
             title={translate('confirm.title')}
-            body={translate('confirm.body', { ssid })}
+            body={this.renderBodyWithSsid(ssid)}
           />
         </div>
         <Pane class={style.body} transparent padding>
