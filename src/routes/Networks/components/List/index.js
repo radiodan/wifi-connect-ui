@@ -19,8 +19,8 @@ export default ({ header = null, items, onSelected }) => (
   <div class={styles.container}>
     {header ? <ListHeader>{header}</ListHeader> : null}
     <ul class={styles.list}>
-      {items.map(item => (
-        <ListItem key={item} onClick={() => onSelected(item)}>
+      {items.map((item, index) => (
+        <ListItem key={`${item}_${index}`} onClick={() => onSelected(item)}>
           {item}
         </ListItem>
       ))}
