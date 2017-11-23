@@ -3,6 +3,7 @@ import { Router } from 'preact-router';
 import root from 'window-or-global';
 
 import applyTheme from './lib/applyTheme';
+import cssVariablesPolyfill from './lib/cssVariablesPolyfill';
 
 import Loading from './routes/Loading';
 import Home from './routes/Home';
@@ -19,9 +20,12 @@ export default class App extends Component {
 
     if (shouldRedirectToRoot) {
       this.showIndex();
-    } else {
-      applyTheme().then(this.showWelcome);
     }
+
+    applyTheme().then(() => {
+      cssVariablesPolyfill();
+      this.showWelcome();
+    });
   }
 
   state = {

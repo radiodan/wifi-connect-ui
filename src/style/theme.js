@@ -1,24 +1,21 @@
-export default ({ theme: { primary, secondary, tertiary } }) => `
-  body {
-    color: ${secondary};
-    background-color: ${primary};
-  }
-
-  .theme-primary-bg {
-    background-color: ${primary};
-  }
-
-  .theme-primary-col {
-    color: ${primary};
-  }
-
-  .theme-primary-bg > .theme-primary-bg,
-  .theme-secondary-bg {
-    background-color: ${secondary};
-  }
-
-  .theme-primary-col > .theme-primary-col,
-  .theme-secondary-col {
-    color: ${secondary};
+export default ({
+  theme: {
+    primary = 'hsl(0, 0%, 0%)',
+    primaryAlternate = 'hsl(0, 0%, 10%)',
+    secondary = 'hsl(0, 0%, 100%)',
+    secondaryAlternate = 'hsl(0, 0%, 90%)',
+    tertiary = 'hsl(0, 0%, 50%)',
+    tertiaryAlternate = 'hsl(0, 0%, 60%)',
+    accent = 'hsl(0, 0%, 750%)',
+  },
+}) => `
+  :root {
+    --primary: ${primary};
+    --primaryAlternate: ${primaryAlternate};
+    --secondary: ${secondary};
+    --secondaryAlternate: ${secondaryAlternate};
+    --tertiary: ${tertiary};
+    --tertiaryAlternate: ${tertiaryAlternate};
+    --accent: ${accent};
   }
 `;

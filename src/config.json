@@ -1,6 +1,11 @@
 {
   "theme": {
     "primary": "hsl(201, 98%, 41%)",
-    "secondary": "#444"
+    "primaryAlternate": "hsl(201, 98%, 51%)",
+    "secondary": "hsl(0, 0%, 100%)",
+    "secondaryAlternate": "hsl(0, 0%, 90%)",
+    "tertiary": "hsl(0, 0%, 27%)",
+    "tertiaryAlternate": "hsl(0, 0%, 37%)",
+    "accent": "yellow"
   }
 }
