@@ -21,7 +21,7 @@ class Home extends Component {
           />
         </div>
         <div class={`${style.center} ${style.body}`}>
-          <Button wide onClick={this.props.onNext}>
+          <Button wide onClick={this.props.onNext} primary contrast>
             Start
           </Button>
         </div>

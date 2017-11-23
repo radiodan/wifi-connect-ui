@@ -39,8 +39,10 @@ export default class Confirm extends Component {
 
   renderActions = () => (
     <div class={style.actions}>
-      <Button onClick={this.props.onBack}>Back</Button>
-      <Button primary onClick={this.connect}>
+      <Button onClick={this.props.onBack} contrast>
+        Back
+      </Button>
+      <Button primary onClick={this.connect} contrast>
         Connect
       </Button>
     </div>

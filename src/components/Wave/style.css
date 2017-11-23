@@ -1,3 +1,16 @@
 .wave {
   transition: stroke 1s ease-in-out;
 }
+
+.waveActive {
+  stroke: var(--secondary);
+}
+
+.waveInactive {
+  stroke: var(--secondary);
+  opacity: 0.4;
+}
+
+.source {
+  fill: var(--accent);
+}

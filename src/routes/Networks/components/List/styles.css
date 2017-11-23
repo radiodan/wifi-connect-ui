@@ -16,8 +16,8 @@
   margin: 0;
   padding: 0;
   text-align: left;
-  color: #000000;
-  background-color: #eeeeee;
+  color: var(--tertiary);
+  background-color: var(--secondaryAlternate);
 }
 
 .headingInner,
@@ -34,8 +34,8 @@
 
   min-height: 46px;
 
-  border-bottom: 1px solid #e6e7e8;
-  background-color: #ffffff;
+  border-bottom: 1px solid var(--secondaryAlternate);
+  background-color: var(--secondary);
 }
 
 .item:last-child {
@@ -43,5 +43,5 @@
 }
 
 .item:hover {
-  background: hsl(0, 0%, 97%);
+  background: var(--secondaryAlternate);
 }

@@ -63,7 +63,6 @@ export default class App extends Component {
   };
 
   showWelcome = () => {
-    console.log('show welcome');
     this.route('/welcome');
   };
 

@@ -39,6 +39,6 @@
 
   border-radius: 50%;
 
-  color: #0288d1;
-  background-color: #fff;
+  color: var(--primary);
+  background-color: (--secondary);
 }

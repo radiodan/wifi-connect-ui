@@ -1,5 +1,5 @@
 .container {
-  background-color: #eeeeee;
+  background-color: var(--secondaryAlternate);
 }
 
 .inner {

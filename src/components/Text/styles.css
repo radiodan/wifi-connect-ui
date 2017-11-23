@@ -1,7 +1,7 @@
 .heading {
   text-align: center;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--secondary);
 
   font-size: 14px;
   font-weight: 600;
@@ -11,7 +11,7 @@
   margin: 0;
 
   text-align: center;
-  color: #eee;
+  color: var(--secondaryAlternate);
 
   font-size: 18px;
   font-weight: 400;

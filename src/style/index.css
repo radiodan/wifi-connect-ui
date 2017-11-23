@@ -9,8 +9,8 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-weight: 400;
 
-  color: #444;
-  background-color: hsl(201, 98%, 41%);
+  color: var(--tertiary);
+  background-color: var(--primary);
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18,7 +18,4 @@ body {
 
 * {
   box-sizing: border-box;
-}
-
-#app {
 }
