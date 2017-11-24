@@ -29,7 +29,9 @@ access point.
 
 There are 4 main colours used throughout the app. Don't change the names of the
 colours, but do change the values if you want to customise the app. We've used
-[hsl]() colours but any valid [CSS colour]() will work.
+[hsl](http://mothereffinghsl.com/) colours but any valid
+[CSS colour value](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
+will work.
 
 | Color name         | Usage                                                                |
 | ------------------ | -------------------------------------------------------------------- |
