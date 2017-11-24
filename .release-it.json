@@ -4,7 +4,7 @@
     "release": true,
     "releaseName": "Release v%s",
     "tokenRef": "WIFI_CONNECT_GITHUB_TOKEN",
-    "assets": "${name}-${version}.zip"
+    "assets": "*.zip"
   },
   "npm": {
     "publish": false
