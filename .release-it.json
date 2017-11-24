@@ -1,0 +1,17 @@
+{
+  "buildCommand": "npm run build",
+  "github": {
+    "release": true,
+    "releaseName": "Release v%s",
+    "tokenRef": "WIFI_CONNECT_GITHUB_TOKEN",
+    "assets": "${name}-${version}.zip"
+  },
+  "npm": {
+    "publish": false
+  },
+  "src": {
+    "commitMessage": "Release v%s",
+    "tagName": "v%s",
+    "tagAnnotation": "Release v%s"
+  }
+}

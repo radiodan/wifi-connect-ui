@@ -78,3 +78,25 @@ npm run serve
 
 For detailed explanation on how things work, checkout the
 [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
+
+## Releases
+
+You only need to read this if you're a member of the Radiodan team and want to
+make a new release.
+
+We use [release-it](https://webpro.github.io/release-it/) to manage releases.
+
+### Setup
+
+* You must be able to `git push` to this repository
+* You must export an environment variable called `WIFI_CONNECT_GITHUB_TOKEN`
+  with a [GitHub Access Token](https://github.com/settings/tokens)
+
+### Releasing a release
+
+`npm run release` will:
+
+* Create a new version tag and push to GitHub
+* Do a build
+* Upload a `zip` of the `build` dir to
+  [GitHub Releases](https://github.com/radiodan/wifi-connect-ui/releases)
