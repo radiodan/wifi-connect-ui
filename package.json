@@ -5,10 +5,12 @@
   "license": "MIT",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "npm run build:bundle && npm run build:config && npm run build:zip",
+    "build":
+      "npm run build:bundle && npm run build:config && npm run build:zip",
     "build:bundle": "preact build --production --no-prerender",
     "build:config": "cp src/config.json build/js/",
-    "build:zip": "ln -s build ${npm_package_name}-${npm_package_version} && rm -f *.zip && zip -r ${npm_package_name}-${npm_package_version}.zip ${npm_package_name}-${npm_package_version} && rm ${npm_package_name}-${npm_package_version}",
+    "build:zip":
+      "ln -s build ${npm_package_name}-v${npm_package_version} && rm -f *.zip && zip -r ${npm_package_name}-v${npm_package_version}.zip ${npm_package_name}-v${npm_package_version} && rm ${npm_package_name}-v${npm_package_version}",
     "serve": "npm run build && preact serve",
     "dev": "preact watch",
     "lint": "eslint src",
@@ -18,9 +20,7 @@
   "eslintConfig": {
     "extends": "eslint-config-airbnb"
   },
-  "eslintIgnore": [
-    "build/*"
-  ],
+  "eslintIgnore": ["build/*"],
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",
     "eslint": "^4.5.0",
