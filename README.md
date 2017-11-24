@@ -13,15 +13,15 @@ colours and text.
 
 To install on the device we recommend using out [installation script]().
 
-If you want to do it manually, just copy all the files from `dist` into the
+If you want to do it manually, just copy all the files from `build` into the
 directory specified by the
 [`--ui-path` command line argument of `wifi-connect`](https://github.com/resin-io/resin-wifi-connect/tree/master/docs).
 
 ## Customising the theme
 
-To customise the colours of the theme, edit the file `config.json` in the `dist`
-directory. This file is loaded by the browser when it connects to the access
-point.
+To customise the colours of the theme, edit the file `config.json` in the
+`build` directory. This file is loaded by the browser when it connects to the
+access point.
 
 `config.json` has two sections:
 
