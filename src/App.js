@@ -2,7 +2,6 @@ import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 import root from 'window-or-global';
 
-
 import translate from './lib/translate';
 import fetchConfig from './lib/fetchConfig';
 import applyTheme from './lib/applyTheme';
@@ -16,13 +15,15 @@ import Confirm from './routes/Confirm';
 import Connecting from './routes/Connecting';
 
 export default class App extends Component {
-  componentDidMount() {
+  constructor(props) {
+    super(props);
+
     const shouldRedirectToRoot = !/^\/(networks)?$/.test(
       Router.getCurrentUrl()
     );
 
     if (shouldRedirectToRoot) {
-      this.showIndex();
+      window.location = '/';
     }
 
     this.fetchConfig();
@@ -75,21 +76,13 @@ export default class App extends Component {
     this.setState(nextState);
   };
 
-  back = () => {
-    root.history.back();
-  };
+  back = () => root.history.back();
 
-  showIndex = () => {
-    this.route('/');
-  };
+  showIndex = () => this.route('/');
 
-  showWelcome = () => {
-    this.route('/welcome');
-  };
+  showWelcome = () => this.route('/welcome');
 
-  showNetworkList = () => {
-    this.route('/networks');
-  };
+  showNetworkList = () => this.route('/networks');
 
   selectNetwork = ({ ssid }) => {
     this.setState({
